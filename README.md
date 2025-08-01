@@ -1,6 +1,6 @@
 ## quant_clone
 
-This is a simple little script to help you generate a llama-quantize command which will allow you to quantize your own GGUF the same way your target GGUF has been quantized.
+This is a simple little script to help you generate a llama-quantize (from llama.cpp) command which will allow you to quantize your own GGUF the same way your target GGUF has been quantized.
 
 ## Installation
 
