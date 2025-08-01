@@ -2,11 +2,13 @@
 
 This is a simple little script to help you generate a llama-quantize command which will allow you to quantize your own GGUF the same way your target GGUF has been quantized.
 
-usage: quant_clone input.gguf output.txt
+## Usage
 
-input.gguf if the GGUF file whose quantization parameters you would like to copy.
+`quant_clone input.gguf output.txt`
 
-output.txt parameter is optional, if it's omitted the command will be saved to cmd.txt
+input.gguf if the GGUF file whose quantization parameters you would like to copy
+
+output.txt parameter is optional, if it's omitted the output will be saved to cmd.txt
 
 ## Example
 
