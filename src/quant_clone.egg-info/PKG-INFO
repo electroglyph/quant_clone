@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: quant_clone
+Version: 0.1.0
+Summary: Generate a llama-quantize command to duplicate the quantization config of a GGUF file
+Author: electroglyph
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: gguf@ git+https://github.com/ggml-org/llama.cpp.git#subdirectory=gguf-py
