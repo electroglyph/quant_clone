@@ -2,6 +2,14 @@
 
 This is a simple little script to help you generate a llama-quantize command which will allow you to quantize your own GGUF the same way your target GGUF has been quantized.
 
+## Installation
+
+`git clone https://github.com/electroglyph/quant_clone.git`
+
+`cd quant_clone`
+
+`pip install .`
+
 ## Usage
 
 `quant_clone input.gguf output.txt`

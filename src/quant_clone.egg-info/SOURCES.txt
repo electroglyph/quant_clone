@@ -1,3 +1,5 @@
+LICENSE
+README.md
 pyproject.toml
 src/quant_clone/__init__.py
 src/quant_clone/main.py
