@@ -14,13 +14,13 @@ This is a simple little script to help you generate a llama-quantize (from llama
 
 `quant_clone input.gguf output.txt`
 
-input.gguf if the GGUF file whose quantization parameters you would like to copy
+input.gguf is the GGUF file whose quantization parameters you would like to copy
 
 output.txt parameter is optional, if it's omitted the output will be saved to cmd.txt
 
 ## Example
 
-if take one of unsloth's dynamic 2.0 quants and run:
+if I take one of unsloth's dynamic 2.0 quants and run:
 
 `quant_clone gemma-3-1b-it-UD-IQ1_S.gguf`
 
