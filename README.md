@@ -4,11 +4,11 @@ This is a simple little script to help you generate a llama-quantize (from llama
 
 ## Installation
 
-`git clone https://github.com/electroglyph/quant_clone.git`
+`pip install quant_clone`
 
-`cd quant_clone`
+if the published `gguf` package doesn't support your model yet, install the current one with:
 
-`pip install .`
+`pip install --force-reinstall --upgrade "git+https://github.com/ggml-org/llama.cpp.git#egg=gguf&subdirectory=gguf-py"`
 
 ## Usage
 

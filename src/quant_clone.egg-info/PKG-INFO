@@ -11,24 +11,32 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: gguf@ git+https://github.com/ggml-org/llama.cpp.git#subdirectory=gguf-py
+Requires-Dist: gguf
 Dynamic: license-file
 
 ## quant_clone
 
-This is a simple little script to help you generate a llama-quantize command which will allow you to quantize your own GGUF the same way your target GGUF has been quantized.
+This is a simple little script to help you generate a llama-quantize (from llama.cpp) command which will allow you to quantize your own GGUF the same way your target GGUF has been quantized.
+
+## Installation
+
+`git clone https://github.com/electroglyph/quant_clone.git`
+
+`cd quant_clone`
+
+`pip install .`
 
 ## Usage
 
 `quant_clone input.gguf output.txt`
 
-input.gguf if the GGUF file whose quantization parameters you would like to copy
+input.gguf is the GGUF file whose quantization parameters you would like to copy
 
 output.txt parameter is optional, if it's omitted the output will be saved to cmd.txt
 
 ## Example
 
-if take one of unsloth's dynamic 2.0 quants and run:
+if I take one of unsloth's dynamic 2.0 quants and run:
 
 `quant_clone gemma-3-1b-it-UD-IQ1_S.gguf`
 
