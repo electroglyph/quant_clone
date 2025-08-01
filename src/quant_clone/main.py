@@ -36,6 +36,7 @@ def ignore_tensor(tensor: ReaderTensor):
         return True
     if any(s in tensor.name for s in IGNORE):
         return True
+    return False
 
 def run():
     args = sys.argv[1:]
