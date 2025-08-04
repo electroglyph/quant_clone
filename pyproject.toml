@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "quant_clone"
+version = "0.1.2"
+authors = [{ name="electroglyph" },]
+description = "Generate a llama-quantize command to copy the quantization parameters of any GGUF"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "BSD-2-Clause"
+license-files = ["LICENSE"]
+dependencies = ["gguf"]
+[project.scripts]
+quant_clone = "quant_clone.main:run"
+[project.urls]
+Homepage = "https://github.com/electroglyph/quant_clone"
+Repository = "https://github.com/electroglyph/quant_clone"

@@ -1,0 +1,2 @@
+[console_scripts]
+quant_clone = quant_clone.main:run

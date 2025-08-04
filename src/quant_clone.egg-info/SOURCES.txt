@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/quant_clone/__init__.py
+src/quant_clone/main.py
+src/quant_clone.egg-info/PKG-INFO
+src/quant_clone.egg-info/SOURCES.txt
+src/quant_clone.egg-info/dependency_links.txt
+src/quant_clone.egg-info/entry_points.txt
+src/quant_clone.egg-info/requires.txt
+src/quant_clone.egg-info/top_level.txt

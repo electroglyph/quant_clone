@@ -1,0 +1,31 @@
+## quant_clone
+
+This is a simple little script to help you generate a llama-quantize (from llama.cpp) command which will allow you to quantize your own GGUF the same way your target GGUF has been quantized.
+
+## Installation
+
+`pip install quant_clone`
+
+if the published `gguf` package doesn't support your model yet, install the current one with:
+
+`pip install --force-reinstall --upgrade "git+https://github.com/ggml-org/llama.cpp.git#egg=gguf&subdirectory=gguf-py"`
+
+## Usage
+
+`quant_clone input.gguf output.txt`
+
+input.gguf is the GGUF file whose quantization parameters you would like to copy
+
+output.txt parameter is optional, if it's omitted the output will be saved to cmd.txt
+
+## Example
+
+if I take one of unsloth's dynamic 2.0 quants and run:
+
+`quant_clone gemma-3-1b-it-UD-IQ1_S.gguf`
+
+I get this output:
+
+`llama-quantize --imatrix <imatrix_unsloth.dat> --tensor-type token_embd.weight=Q5_1 --tensor-type "blk\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25)\.attn_k.weight=IQ4_NL" --tensor-type "blk\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25)\.attn_output.weight=IQ2_XXS" --tensor-type "blk\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25)\.attn_q.weight=IQ4_NL" --tensor-type "blk\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25)\.attn_v.weight=Q5_0" --tensor-type "blk\.(0|2|3|4|25)\.ffn_down.weight=IQ3_S" --tensor-type "blk\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25)\.ffn_gate.weight=IQ4_NL" --tensor-type "blk\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25)\.ffn_up.weight=IQ4_NL" --tensor-type "blk\.(1)\.ffn_down.weight=Q2_K" --tensor-type "blk\.(5|6|7|8|9|10|16|17|18|19|20|21|22|23|24)\.ffn_down.weight=IQ1_S" --tensor-type "blk\.(11|12|13|14|15)\.ffn_down.weight=IQ2_S" <input.gguf> <output.gguf> Q8_0`
+
+That's the command to run to replicate the quantization. Make sure to edit imatrix path, input gguf path, and output gguf path.
