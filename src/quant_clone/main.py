@@ -70,7 +70,7 @@ def run():
                     else:
                         seen_tensors[(pre, post, t)] = [num]
                 else:
-                    cmd = f"{cmd} --tensor-type {tensor.name}={GGMLQuantizationType(tensor.tensor_type).name}"
+                    cmd = f"{cmd} --tensor-type {tensor.name}={t}"
             for k,v in seen_tensors.items():
                 pre = f'--tensor-type "{k[0]}\\.('
                 for i,x in enumerate(v):
