@@ -28,6 +28,7 @@ IGNORE = [
     "attn_rel_b.weight",
 ]
 
+
 # adapted from https://github.com/unslothai/llama.cpp/blob/master/src/llama-quant.cpp#L818
 def ignore_tensor(tensor: ReaderTensor):
     if not tensor.name.endswith("weight"):
@@ -38,6 +39,7 @@ def ignore_tensor(tensor: ReaderTensor):
     if any(s in tensor.name for s in IGNORE):
         return True
     return False
+
 
 def run():
     args = sys.argv[1:]
@@ -71,9 +73,9 @@ def run():
                         seen_tensors[(pre, post, t)] = [num]
                 else:
                     cmd = f"{cmd} --tensor-type {tensor.name}={t}"
-            for k,v in seen_tensors.items():
+            for k, v in seen_tensors.items():
                 pre = f'--tensor-type "{k[0]}\\.('
-                for i,x in enumerate(v):
+                for i, x in enumerate(v):
                     if i < len(v) - 1:
                         pre = f"{pre}{x}|"
                     else:
